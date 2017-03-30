@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using labReportSystem.Control.DAL;
+using labReportSystem.Model;
 
 namespace labReportSystem.Control.BLL
 {
@@ -11,13 +12,14 @@ namespace labReportSystem.Control.BLL
         /// <summary>
         /// 提交数据到数据库中
         /// </summary>
-        /// <param name="teaname">教室姓名</param>
-        /// <param name="local">地点</param>
-        /// <param name="year">实验</param>
+        /// <param name="modelReport">实验报告册LabReport实体类</param>
         /// <returns></returns>
-        public bool CommitData(string teaname,string location,string year)
+        public bool CommitData(LabReport modelReport)
         {
-            return new labPage_DAL().CommitData(teaname, location, year);
+            if(数据存在)
+                进行更新
+            else 进行插入
+            return new labPage_DAL().CommitData(modelReport);
         }
     }
 }
