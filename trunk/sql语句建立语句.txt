@@ -1,0 +1,66 @@
+create table Users(
+Users_ID int primary key identity(1,1),
+Users_name nvarchar(10),
+Users_pwd		  varchar(10),
+Users_right		    int,
+Users_reserve1	  varchar(10),
+Users_reserve2	  varchar(10),
+)
+go
+create table  Stuinfo(
+Stuinfo_ID			int primary key identity(1,1),
+Stuinfo_userid		int,
+Stuinfo_num			nvarchar(20),
+Stuinfo_name		nvarchar(10),
+Stuinfo_class		nvarchar(10),
+Stuinfo_major		nvarchar(10),
+Stuinfo_dept		nvarchar(10),
+)
+go
+create table Teainfo(
+Teainfo_ID			int primary key identity(1,1),
+Teainfo_userid		int,
+Teainfo_name		nvarchar(10),
+Teainfo_sub1		nvarchar(10),
+Teainfo_sub2		nvarchar(10),
+Teainfo_sub3		nvarchar(10),
+Teainfo_sub4		nvarchar(10),
+Teainfo_sub5		nvarchar(10),
+)
+go
+create table LabReport(
+LabReport_id		 int primary key identity(1,1),
+LabReport_userid	  int,
+LabReport_subname	  nvarchar(10),
+LabReport_teaname	  nvarchar(10),
+LabReport_location	  nvarchar(10),
+LabReport_date		  nvarchar(10),
+LabReport_fill		  nvarchar(max),
+)
+go 
+create table LabContent(
+LabContent_id   	  int primary key identity(1,1),
+LabContent_count	  int,
+LabContent_lrtid	   int,
+LabContent_program	   nvarchar(10),
+LabContent_date		   nvarchar(10),
+LabContent_score	   nvarchar(10),
+LabContent_content1	   nvarchar(max),
+LabContent_content2	   nvarchar(max),
+LabContent_content3	   nvarchar(max),
+LabContent_content4	   nvarchar(max),
+LabContent_content5	   nvarchar(max),
+LabContent_content6	   nvarchar(max),
+LabContent_content7	   nvarchar(max),
+LabContent_content8	   nvarchar(max),
+)
+go
+create table Inform(
+Inform_ID 		 int primary key identity(1,1),
+Inform_sender	  nvarchar(10),
+Inform_rec		  nvarchar(10),
+Inform_content	  nvarchar(10),
+Inform_time		  nvarchar(10),
+Inform_state	 int,
+)
+go

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--引入外部的css文件-->
+
+    <link href="../../Resouce/CSS/bootstrap.css" rel="stylesheet" />
+
+    <!--结束引用-->
+
+    <!--引入内部的css文件-->
+    <link href="labPage.css" rel="stylesheet" />
+    <!--结束引用-->
+    <title>实验报告册封面</title>
+
+</head>
+<body>
+<div class="container">
+    <div class="blog-header">
+        <h1 class="blog-title">南阳理工学院</h1>
+        <p class="lead blog-description">&nbsp;NanYang Institute of Technology</p>
+    </div>
+    <div class="col-sm-8 blog-main">
+        <div class="blog-post">
+            <h2 class="blog-post-title"><u>计算机网络</u>实验报告册
+            </h2>
+        </div>
+        <hr>
+        <br/>
+        <pre class="pre-font-size">院系:计算机与信息工程学院</pre>
+        <pre class="pre-font-size">专业：计算机科学与技术</pre>
+        <pre class="pre-font-size">班级：14计科卓越</pre>
+        <pre class="pre-font-size">姓名：曲廉卿</pre>
+        <pre class="pre-font-size">学号：1406915056</pre>
+        <pre class="pre-font-size teacher">指导老师：<select><option value="张静">张静</option><option value="马永红">马永红</option><option value="王秋芬">王秋芬</option></select></pre>
+        <pre class="pre-font-size local">地点：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"/></pre>
+        <pre class="pre-font-size year">学年学期：<input type="text"/></pre>
+        <nav>
+            <ul class="pager">
+                <li><a class="align-right next">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        <div class="sidebar-module sidebar-module-inset">
+            <h4>帮助</h4>
+            <p>常见问题帮助：如果上边的信息与个人信息不符，请在我的主页中修改晚上正确的个人信息，以免影响你的实验成绩。若是指导老师不正确，请联系指导老师，并完善其信息</p>
+        </div>
+        <div class="sidebar-module">
+            <h4>快速入口</h4>
+            <ol class="list-unstyled">
+            </ol>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<!--外部引入的JS文件-->
+<script src="../../Resouce/JS/jquery.js"></script>
+<!--结束外部引用-->
+
+<!--页面内部的JS文件-->
+<script src="../../Control/JS/labPage_Main.js"></script>
+<!--结束内部的引用-->

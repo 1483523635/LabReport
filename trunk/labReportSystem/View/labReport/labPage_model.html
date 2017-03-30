@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--外部引入的css文件-->
+    <link href="../../Resouce/CSS/bootstrap.css" rel="stylesheet" />
+    <link href="../../Resouce/CSS/jquery-ui.css" rel="stylesheet" />
+    <!--结束外部的引用-->
+
+    <!--内部引用的css文件-->
+    <link href="labPage.css" rel="stylesheet" />
+    <!--结束内部引用-->
+    <title>实验详细内容</title>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div class="col-sm-8 blog-main">
+            <div class="blog-post">
+                <h2 class="blog-post-title"><u>计算机网络</u>实验报告册
+                </h2>
+            </div>
+            <hr>
+            <br />
+            <pre class="pre-font-size">实验项目：<input type="text"/></pre>
+            <pre class="pre-font-size">实验日期：<input  id="datepicker" type="text" readonly="readonly"/></pre>
+            <pre class="pre-font-size">实验成绩：<input type="text"/></pre>
+            <div id="accordion">
+                <h3>一、目的和要求</h3>
+                <textarea rows='5' class='myTextArea'></textarea>
+                <h3>二、实验项目</h3>
+                <textarea rows='5' class='myTextArea'></textarea>
+                <h3>三、实验步骤（原理或流程）</h3>
+                <textarea rows='5' class='myTextArea'></textarea>
+                <h3>四、实验结果</h3>
+                <textarea rows='5' class='myTextArea'></textarea>
+                <h3>五、实验总结</h3>
+                <textarea rows='5' class='myTextArea'></textarea>
+                <h3>附录（可粘贴）</h3>
+                <textarea rows='5' class='myTextArea'></textarea>
+            </div>
+           <nav>
+            <ul class="pager">
+                <li><input class="align-right next" type="button" value ="提交"/></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+            <br />
+            <br />
+            <br />
+            <div class="sidebar-module">
+                <h4>快速入口</h4>
+                <ol class="list-unstyled">
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!--外部的js文件-->
+<script src="../../Resouce/JS/jquery.js"></script>
+<script src="../../Resouce/JS/jquery-ui.js"></script>
+<!--结束 引用-->
+
+<!--内部的js文件-->
+<script src="../../Control/JS/labPage_model.js"></script>
+<!--结束引用-->
+

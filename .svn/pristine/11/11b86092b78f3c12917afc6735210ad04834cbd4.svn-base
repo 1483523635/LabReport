@@ -1,0 +1,23 @@
+﻿           <hr class="thin"/>
+            <br/>
+            <div class="input-control text full-size" data-role="input">
+                <label >账号</label>
+                <input type="text" />
+                <button class="button helper-button clear">
+                    <img src="../Resouce/IMG/clear.png"/></button>
+            </div>
+            <br/>
+            <br/>
+            <div class="input-control password full-size" data-role="input">
+                <label >密码</label>
+                <input type="password" />
+                <button class="button helper-button reveal">
+                    <img src="../Resouce/IMG/look.png"/></button>
+            </div>
+            <br/>
+            <br/>
+<div class="form-actions" align="center">
+    <input type="button" class="button primary" value="登陆"/>
+ 
+    <button type="reset" class="button success">清空</button>
+</div>
