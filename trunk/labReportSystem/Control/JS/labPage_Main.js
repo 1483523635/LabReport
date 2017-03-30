@@ -10,11 +10,30 @@ for (var i = 1; i <= count; i++) {
 if (count > 0) {
     $('.next').attr("href",$('.list-unstyled li pre a:first').attr("href"));
 }
+/**
+*用户点击下一步时进行数据的提交
+*/
 $('.next').click(function() {
     //这里要进行数据的提交 用ajax进行数据的提交
     var teacher = $('.teacher select option:selected').val();
     var local = $('.local input').val();
     var year = $('.year input').val();
-    alert(teacher+local+year);
+    var username = sessionStorage.getItem("username");
+    alert(teacher + local + year+username);
+    $.ajax({
+        async: false,
+        dataType: "JSON",
+        contentType: "Application/json",
+        type: "post",
+        url: "../Webservice/LabPage_Main.asmx/CommitData",
+        data: "{'teaName':'" + teacher + "','local':'" + local + "','year':'"+year+"'}",
+        success: function (data) {
+
+            window.location.href = "";
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert(textStatus + " " + errorThrown);
+        }
+    });
 });
 
