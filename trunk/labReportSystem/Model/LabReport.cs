@@ -6,7 +6,7 @@ using System.Text;
 namespace labReportSystem.Model
 {
     /// <summary>
-    /// 实体类
+    /// 实验报告册实体类
     /// </summary>
     public class LabReport
     {
@@ -39,7 +39,6 @@ namespace labReportSystem.Model
         /// 填写说明
         /// </summary>
         public String LabReport_fill { get; set; }
-
 
         #endregion
 

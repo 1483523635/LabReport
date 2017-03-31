@@ -6,7 +6,7 @@ using System.Text;
 namespace labReportSystem.Model
 {
     /// <summary>
-    /// 实体类
+    /// 教师信息实体类
     /// </summary>
     public class Teainfo
     {
