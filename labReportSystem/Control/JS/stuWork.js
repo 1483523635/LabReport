@@ -34,5 +34,5 @@ $('.cell').click(function () {
     //获取当前点击的元素的文本值
     alert($(this).text());
     alert($('.example').attr("data-text"));
-    window.location.href = "../labReport/labPage_Main.html?subjectName="+$('.example').attr("data-text");
+    window.location.href = "../labReport/labPage_Main.html?subjectName=" + encodeURI($('.example').attr("data-text"));
 });
