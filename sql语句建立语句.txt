@@ -7,6 +7,7 @@ Users_reserve1	  varchar(10),
 Users_reserve2	  varchar(10),
 )
 go
+
 create table  Stuinfo(
 Stuinfo_ID			int primary key identity(1,1),
 Stuinfo_userid		int,
@@ -17,6 +18,7 @@ Stuinfo_major		nvarchar(10),
 Stuinfo_dept		nvarchar(10),
 )
 go
+
 create table Teainfo(
 Teainfo_ID			int primary key identity(1,1),
 Teainfo_userid		int,
@@ -28,7 +30,8 @@ Teainfo_sub4		nvarchar(10),
 Teainfo_sub5		nvarchar(10),
 )
 go
-create table LabReport(
+
+   create table LabReport(
 LabReport_id		 int primary key identity(1,1),
 LabReport_userid	  int,
 LabReport_subname	  nvarchar(10),
@@ -38,6 +41,8 @@ LabReport_date		  nvarchar(10),
 LabReport_fill		  nvarchar(max),
 )
 go 
+
+
 create table LabContent(
 LabContent_id   	  int primary key identity(1,1),
 LabContent_count	  int,
@@ -55,6 +60,7 @@ LabContent_content7	   nvarchar(max),
 LabContent_content8	   nvarchar(max),
 )
 go
+
 create table Inform(
 Inform_ID 		 int primary key identity(1,1),
 Inform_sender	  nvarchar(10),

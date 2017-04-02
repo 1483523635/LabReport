@@ -31,7 +31,7 @@ namespace labReportSystem.Control.Webservice
         [WebMethod]
         public bool Insertdata(string user_Name, string stu_id, string stu_name, string stu_class, string stu_major, string stu_dept)
        {
-           return new ChangeStuInfo_DAL().insertData(user_Name, stu_id, stu_name, stu_class, stu_major, stu_dept);
+           return new StuInfo_DAL().insertData(user_Name, stu_id, stu_name, stu_class, stu_major, stu_dept);
        }
     
     }

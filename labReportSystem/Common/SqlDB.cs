@@ -14,7 +14,7 @@ public class SqlDB
 
     public SqlDB()
     {
-        conn = new SqlConnection(@"server=172.16.33.25;DataBase=labReportSystem;uid=sa;pwd=123");
+        conn = new SqlConnection(@"server=172.16.22.22;DataBase=lab;uid=sa;pwd=123");
         //string conStr = ConfigurationManager.ConnectionStrings["connectionstring"].ToString();
         //conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnetString"].ConnectionString.ToString());
         // conn = new SqlConnection(@"server=.;DataBase=StockDb;uid=sa;pwd=123");

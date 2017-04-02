@@ -3,3 +3,11 @@ D:\Users\Dinger\Desktop\labReportSystem\labReportSystem\bin\labReportSystem.pdb
 D:\Users\Dinger\Desktop\labReportSystem\labReportSystem\obj\Debug\labReportSystem.dll
 D:\Users\Dinger\Desktop\labReportSystem\labReportSystem\obj\Debug\labReportSystem.pdb
 D:\Users\Dinger\Desktop\labReportSystem\labReportSystem\obj\Debug\labReportSystem.csprojResolveAssemblyReference.cache
+D:\Users\Dinger\Desktop\LabReport.git\trunk\labReportSystem\bin\labReportSystem.dll.config
+D:\Users\Dinger\Desktop\LabReport.git\trunk\labReportSystem\bin\labReportSystem.dll
+D:\Users\Dinger\Desktop\LabReport.git\trunk\labReportSystem\bin\labReportSystem.pdb
+D:\Users\Dinger\Desktop\LabReport.git\trunk\labReportSystem\obj\Debug\labReportSystem.csprojResolveAssemblyReference.cache
+D:\Users\Dinger\Desktop\LabReport.git\trunk\labReportSystem\obj\Debug\labReportSystem.dll
+D:\Users\Dinger\Desktop\LabReport.git\trunk\labReportSystem\obj\Debug\labReportSystem.pdb
+D:\Users\Dinger\Desktop\LabReport.git\trunk\labReportSystem\bin\Newtonsoft.Json.dll
+D:\Users\Dinger\Desktop\LabReport.git\trunk\labReportSystem\bin\Newtonsoft.Json.xml

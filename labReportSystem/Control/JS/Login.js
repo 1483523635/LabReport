@@ -40,7 +40,11 @@ function stu() {
                 alert("账号和密码不匹配！");
                 return;
             }
-                window.location.href = "stuView/stuMainPage.html?userID="+$stuname.val();  
+            sessionStorage.setItem("username", $stuname.val());
+            //这是原来的
+           // window.location.href = "stuView/stuMainPage.html?userID=" + $stuname.val();  
+            //这是最新的
+            window.location.href = "stuView/stuMainPage.html";
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert(textStatus + " " + errorThrown);
