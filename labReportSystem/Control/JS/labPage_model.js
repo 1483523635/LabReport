@@ -26,18 +26,28 @@ $(function () {
     $("#datepicker").datepicker();
     $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
     //设置标题控件
-    $("#accordion").accordion();
-  
-     
+    $("#accordion").accordion();  
 });
 //解析url  获传过来的数据（实验次数）
 var $url = window.location.href;
 var Labcount = $url.split("?")[1].split("=")[1];
-var labTotalCount = 8;
+var labTotalCount = sessionStorage.getItem("Labcount");
 for (var i = 1; i <=labTotalCount; i++) {
     if (i ==Labcount) {
         $(".list-unstyled").append($("<li><pre><a href=" + "#?labCount=" + i + ">第" + i + "次实验</a></pre></li>"));
         continue;
     }
     $(".list-unstyled").append($("<li><pre><a href=" + "labPage_model.html?labCount=" + i + ">第" + i + "次实验</a></pre></li>"));
+}
+
+/**
+ * 初始化函数
+ */
+function Init() {
+    /**
+     * 设置科目名称
+     */
+    $(".subjectName >u").text(sessionStorage.getItem("subjectName"));
+
+
 }

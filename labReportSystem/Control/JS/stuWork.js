@@ -9,7 +9,6 @@
  * Author 曲
  *时间：2016-12-2
  */
-
 $('.example').attr('data-text', 'C语言');
 $('.example').append($("<div class='grid no-margin-top'>" +
     " <div class='row cells10'></div></div>"));
@@ -32,7 +31,12 @@ for (var i = 1; i <= 8; i++) {
  */
 $('.cell').click(function () {
     //获取当前点击的元素的文本值
-    alert($(this).text());
-    alert($('.example').attr("data-text"));
-    window.location.href = "../labReport/labPage_Main.html?subjectName=" + encodeURI($('.example').attr("data-text"));
+    //alert($(this).text());
+
+    /**
+     * 将科目名称添加到session中去
+     */
+    sessionStorage.setItem("subjectName", $('.example').attr("data-text"));
+    window.location
+        .href = "../labReport/labPage_Main.html"; //+"?subjectName=" + encodeURI($('.example').attr("data-text"));
 });
