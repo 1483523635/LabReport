@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using labReportSystem.Control.BLL;
 using System.Web.Services;
-using labReportSystem.Control.BLL;
 
 namespace labReportSystem.Control.Webservice
 {
@@ -39,6 +35,29 @@ namespace labReportSystem.Control.Webservice
         public string GetUserDate(string username)
         {
             return new labPage_BLL().GetUserDate(username);
+        }
+        /// <summary>
+        /// 通过科目名称获取实验次数
+        /// 时间：2017-4-4
+        /// Author ：曲
+        /// </summary>
+        /// <param name="subjectName"></param>
+        /// <returns></returns>
+        [WebMethod]
+        public int GetLabCount(string subjectName)
+        {
+            return new labPage_BLL().GetLabCount(subjectName);
+        }
+
+        /// <summary>
+        /// 通过科目名称获取老师姓名
+        /// </summary>
+        /// <param name="subjectName">科目名称</param>
+        /// <returns>Json串</returns>
+        [WebMethod]
+        public string GetTeacherList(string subjectName)
+        {
+            return new labPage_BLL().GetTeaNameList(subjectName);
         }
     }
 }

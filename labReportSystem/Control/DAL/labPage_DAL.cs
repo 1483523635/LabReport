@@ -41,5 +41,7 @@ namespace labReportSystem.Control.DAL
                  "where LabReport_id=" + model.LabReport_userid;
             return new SqlDB().ExecSql(sql);
         }
+
+    
     }
 }
