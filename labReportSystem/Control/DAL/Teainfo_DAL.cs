@@ -26,9 +26,9 @@ namespace labReportSystem.Control.DAL
         public DataTable GetTeaTableInfo(string subjectName,string scheme=null)
         {
             
-           string  sql = "select 8 from Teainfo where Teainfo_sub1='" + subjectName +
+           string  sql = "select * from Teainfo where ( Teainfo_sub1='" + subjectName +
                      "' or Teainfo_sub2='" + subjectName + "' or Teainfo_sub3='" + subjectName +
-                     "' or Teainfo_sub4='" + subjectName + "' or Teainfo_sub5='" + subjectName + "'";
+                     "' or Teainfo_sub4='" + subjectName + "' or Teainfo_sub5='" + subjectName + "')";
             if (scheme != null)
             {
                 sql += " and Teainfo_scheme='" + scheme + "'";

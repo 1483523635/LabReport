@@ -44,15 +44,15 @@ function GetLabCount(subjectName) {
     });
     return subCount;
 }
-/**
+/*
  * 将科目名称添加到session中去
  */
 function AddSubjectNameToSession() {
-    sessionStorage.setItem("LabCount", GetLabCount(GetSubjectName())); 
+    sessionStorage.setItem("LabCount", GetLabCount(GetSubjectName()));
 };
 
 
-/**
+/*
  * 初始化快速入口
  */
 function InitFastEntrance() {
@@ -64,13 +64,13 @@ function InitFastEntrance() {
     if (count > 0) {
         $('.next').attr("href", $('.list-unstyled li pre a:first').attr("href"));
     }
- 
+
 }
 
 /**
  * 读取用户的信息
  */
-function ReadUserData () {
+function ReadUserData() {
     /**
      * 通过session获取的用户名
      */
@@ -115,7 +115,7 @@ $('.next').click(function () {
         dataType: "JSON",
         contentType: "Application/json",
         type: "post",
-        url: "../Webservice/LabPage_Main.asmx/CommitData",
+        url: "../../Control/Webservice/LabPage_Main.asmx/CommitData",
         data: "{'teaName':'" + teacher + "','local':'" + local + "','year':'" + year + "'}",
         success: function (data) {
             window.location.href = "";
@@ -128,7 +128,6 @@ $('.next').click(function () {
 
 /**
  * 获取教师名（通过科目名称）
- * 有问题没解决
  */
 function GetTeaNameList() {
     var subjectName = GetSubjectName();
@@ -137,10 +136,17 @@ function GetTeaNameList() {
         dataType: "JSON",
         contentType: "Application/json",
         type: "post",
-        url: "../Webservice/LabPage_Main.asmx/GetTeacherList",
+        url: "../../Control/Webservice/LabPage_Main.asmx/GetTeacherList",
         data: "{'subjectName':'" + subjectName + "'}",
         success: function (data) {
-            alert(data.d);
+            var teaNameList = eval(data.d);
+            $('.teacher >select').empty();
+            $.each(teaNameList,
+                function (i) {
+                    $("<option> " + teaNameList[i] + "</option>").appendTo(".teacher >select");
+                });
+            //获取当前选中的值
+            //alert($('.teacher >select option:selected').val());
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert(textStatus + " " + errorThrown);
