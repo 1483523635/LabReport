@@ -62,5 +62,14 @@ namespace labReportSystem.Control.BLL
             }
             return teaNameList.ConvertToJson();
         }
+
+        /// <summary>
+        /// 获取所有的学年学期
+        /// </summary>
+        /// <returns>JSON串</returns>
+        public string GetAllScheme()
+        {
+           return new Other_DAL().GetSomeInfo("Year").ConvertToJson(); 
+        }
     }
 }

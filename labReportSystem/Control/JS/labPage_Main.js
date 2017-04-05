@@ -7,7 +7,8 @@ $(function () {
     ReadUserData();
     InitFastEntrance();
     AddSubjectNameToSession();
-    GetTeaNameList();
+    TeaNameList();
+    SetScheme();
 });
 
 /*
@@ -50,7 +51,6 @@ function GetLabCount(subjectName) {
 function AddSubjectNameToSession() {
     sessionStorage.setItem("LabCount", GetLabCount(GetSubjectName()));
 };
-
 
 /*
  * 初始化快速入口
@@ -100,7 +100,8 @@ function ReadUserData() {
     });
 
 };
-/**
+
+/*
 *用户点击下一步时进行数据的提交
 */
 $('.next').click(function () {
@@ -129,7 +130,7 @@ $('.next').click(function () {
 /**
  * 获取教师名（通过科目名称）
  */
-function GetTeaNameList() {
+function TeaNameList() {
     var subjectName = GetSubjectName();
     $.ajax({
         async: false,
@@ -153,3 +154,70 @@ function GetTeaNameList() {
         }
     });
 }
+/**
+ * 绑定学年学期的值
+ */
+function SetScheme() {
+    $.ajax({
+        async: false,
+        dataType: "JSON",
+        contentType: "Application/json",
+        type: "post",
+        url: "../../Control/Webservice/LabPage_Main.asmx/GetAllScheme",
+        success: function (data) {
+            $(".year >select").empty();
+            var schemes = eval(data.d);
+          //  alert(schemes[0].Year);
+            $.each(schemes, function (i) {
+                if(schemes[i].Year!=null)
+                $("<option> " + schemes[i].Year + "</option>").appendTo(".year >select"); 
+            });
+        }
+
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///**
+// * 当下拉框选中的数值发生变化时触发的事件
+// */
+//function SelectChanged()
+//{
+//    var teacherName = $('.teacher select option:selected').val();    
+//};
+
+

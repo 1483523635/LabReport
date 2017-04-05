@@ -59,5 +59,15 @@ namespace labReportSystem.Control.Webservice
         {
             return new labPage_BLL().GetTeaNameList(subjectName);
         }
+
+        /// <summary>
+        ///获取所有的学年学期
+        /// </summary>
+        /// <returns>JSON</returns>
+        [WebMethod]
+        public string GetAllScheme()
+        {
+            return new labPage_BLL().GetAllScheme();
+        }
     }
 }
