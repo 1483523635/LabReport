@@ -1,5 +1,19 @@
 ﻿//通过动态的绑定连接 注意另一个界面传过去之后要对url进行解析
 
+
+//声明全局变量
+
+/**
+ * 实验报告册的总次数
+ */
+var countTotal = GetLabCount(GetSubjectName());
+/**
+ * 通过session获取的用户名
+ */
+var username = sessionStorage.getItem("username");
+//结束全局变量的声明
+
+
 /**
  * 初始化函数
  */
@@ -56,15 +70,11 @@ function AddSubjectNameToSession() {
  * 初始化快速入口
  */
 function InitFastEntrance() {
-    var count = GetLabCount(GetSubjectName());
-    for (var i = 1; i <= count; i++) {
+  
+    for (var i = 1; i <= countTotal; i++) {
         $(".list-unstyled").append($("<li><pre><a href=" + "labPage_model.html?labCount=" + i + ">第" + i + "次实验</a></pre></li>"));
     }
-    //设置下一页的跳转路径
-    if (count > 0) {
-        $('.next').attr("href", $('.list-unstyled li pre a:first').attr("href"));
-    }
-
+  
 }
 
 /**
@@ -74,7 +84,7 @@ function ReadUserData() {
     /**
      * 通过session获取的用户名
      */
-    var username = sessionStorage.getItem("username");
+   
     /**
      * 设置科目名称
      */
@@ -105,21 +115,30 @@ function ReadUserData() {
 *用户点击下一步时进行数据的提交
 */
 $('.next').click(function () {
+
+    //设置下一页的跳转路径
+    if (countTotal > 0) {
+        $('.next').attr("href", $('.list-unstyled li pre a:first').attr("href"));
+    }
+
     //这里要进行数据的提交 用ajax进行数据的提交   
     var teacher = $('.teacher select option:selected').val();
     var local = $('.local input').val();
-    var year = $('.year input').val();
-    var username = sessionStorage.getItem("username");
-    alert(teacher + local + year + username);
+    var year = $('.year select option:selected').val();
+    var subjectName = GetSubjectName();
+    var subCount = countTotal;
+    //var username = sessionStorage.getItem("username");
+   // alert(teacher + local + year + username);
     $.ajax({
         async: false,
         dataType: "JSON",
         contentType: "Application/json",
         type: "post",
         url: "../../Control/Webservice/LabPage_Main.asmx/CommitData",
-        data: "{'teaName':'" + teacher + "','local':'" + local + "','year':'" + year + "'}",
+        data: "{'teaName':'" + teacher + "','local':'" + local + "','year':'" + year
+                + "','subjectName':'" + subjectName + "','userName':'" +username+"'}",
         success: function (data) {
-            window.location.href = "";
+            alert(data.d);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert(textStatus + " " + errorThrown);
@@ -176,48 +195,5 @@ function SetScheme() {
 
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-///**
-// * 当下拉框选中的数值发生变化时触发的事件
-// */
-//function SelectChanged()
-//{
-//    var teacherName = $('.teacher select option:selected').val();    
-//};
 
 

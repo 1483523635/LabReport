@@ -1,5 +1,7 @@
 ﻿using labReportSystem.Control.BLL;
 using System.Web.Services;
+using labReportSystem.Control.DAL;
+using labReportSystem.Model;
 
 namespace labReportSystem.Control.Webservice
 {
@@ -20,10 +22,22 @@ namespace labReportSystem.Control.Webservice
         /// <param name="teaName">教师名</param>
         /// <param name="local">地点</param>
         /// <param name="year">实验日期</param>
+        /// <param name="subjectName">科目名称</param>
+        /// <param name="userID">账号名称</param>
         [WebMethod]
-        public void CommitData( string teaName,string local,string year )
+        public bool  CommitData(string teaName, string local, string year, string subjectName, string userName)
         {
-            
+            string userID = new Users_DAL().GetUserId(userName);
+           return new labPage_BLL().CommitData(
+                                        new LabReport()
+                                        {
+                                            LabReport_userid = userID,
+                                            LabReport_subname = subjectName,
+                                            LabReport_teaname = teaName,
+                                            LabReport_location = local,
+                                            LabReport_date = year
+                                        }
+                                        );
         }
 
         /// <summary>
@@ -69,5 +83,6 @@ namespace labReportSystem.Control.Webservice
         {
             return new labPage_BLL().GetAllScheme();
         }
+
     }
 }

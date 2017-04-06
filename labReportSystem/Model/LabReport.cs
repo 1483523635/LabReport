@@ -10,6 +10,20 @@ namespace labReportSystem.Model
     /// </summary>
     public class LabReport
     {
+        #region 构造函数
+
+        public LabReport()
+        {
+            LabReport_id = "";
+            LabReport_userid = "";
+            LabReport_subname = "";
+            LabReport_teaname = "";
+            LabReport_location = "";
+            LabReport_date = "";
+            LabReport_fill = "";
+        }
+        #endregion
+
         #region 成员
         /// <summary>
         /// ID
@@ -81,7 +95,7 @@ namespace labReportSystem.Model
 "LabReport_teaname"   ,
 "LabReport_location"   ,
 "LabReport_date"   ,
-"LabReport_fill"                   
+"LabReport_fill"
  };
         }
 

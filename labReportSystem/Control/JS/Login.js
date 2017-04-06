@@ -24,10 +24,15 @@ $('#tabs-3').load('Temp_login.html', function (responseText, textStatus) {
 function stu() {
     var $stuname = $("#tabs-1 .text input ");
     var $stuPwd = $("#tabs-1 .password input");
-    if ($stuname == undefined || $stuname.val().trim().length == 0 || $stuPwd == undefined || $stuPwd.val().length == 0) {
-        alert("请输入完整信息！");
-        return;
-    }
+
+    //这里进行了修改用于测试 2017-4-6 下午
+    $stuname.val("student1");
+    $stuPwd.val("123456");
+    //这里用完之后需要进行恢复 2017-4-6
+    //if ($stuname == undefined || $stuname.val().trim().length == 0 || $stuPwd == undefined || $stuPwd.val().length == 0) {
+    //    alert("请输入完整信息！");
+    //    return;
+    //}
     $.ajax({
         async: false,
         dataType: "JSON",

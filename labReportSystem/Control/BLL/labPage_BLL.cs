@@ -18,11 +18,16 @@ namespace labReportSystem.Control.BLL
         /// <returns></returns>
         public bool CommitData(LabReport modelReport)
         {
-            //if(数据存在)
-            //    进行更新
-            //else 进行插入
-            //return new labPage_DAL().CommitData(modelReport);
-            return true;
+           labPage_DAL page=new labPage_DAL();
+            //return page.IsExistData(modelReport);
+            //不存在时返回true
+            //删除重复元素
+            page.DelateRepeat();
+            if (page.IsExistData(modelReport))
+            {
+                return page.InsertData(modelReport);
+            }
+            return page.UpdateData(modelReport);
         }
 
         /// <summary>
