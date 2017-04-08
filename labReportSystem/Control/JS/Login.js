@@ -1,13 +1,13 @@
 ﻿//加载tab键的tab内容 并绑定事件
 $('#tabs-1').load('Temp_login.html', function (responseText, textStatus) {
   
-    if (textStatus == "success") {
+    if (textStatus === "success") {
         $('#tabs-1 .form-actions .primary').attr("id", "stu_login");
         $("#stu_login").click(stu);
     }
 });
 $('#tabs-2').load('Temp_login.html', function (responseText, textStatus) {
-    if (textStatus == "success") {
+    if (textStatus === "success") {
         $('#tabs-2 .form-actions .primary').attr("id", "tea_login");
         $("#tea_login").click(tea);
         
@@ -61,14 +61,15 @@ function stu() {
 };
 //教师登陆时
 function tea() {
-    window.location.href = "stuView/stuMainPage.html";
+    window.location.href = "teacher/teacherMain.html";
 };
 
 
 
 //admin 登陆时
 function admin() {
-   
+    window.location.href = "admin/adminMainPage.html";
+
 };
 /**
  * 判断账号和密码是否合法
